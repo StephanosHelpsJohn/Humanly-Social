@@ -10,23 +10,19 @@ interface UserPayload {
   exp: number;
 }
 
-const getUser = () => {
-  const token = cookies().get('auth_token')?.value;
-  if (!token || !process.env.JWT_SECRET) {
-    return null;
-  }
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET) as UserPayload;
-    return decoded;
-  } catch (error) {
-    console.error('JWT verification failed:', error);
-    return null;
-  }
-};
-
-
 export default function DashboardPage() {
-    const user = getUser();
+    const cookieStore = cookies();
+    const token = cookieStore.get('auth_token')?.value;
+
+    let user: UserPayload | null = null;
+    if (token && process.env.JWT_SECRET) {
+        try {
+            user = jwt.verify(token, process.env.JWT_SECRET) as UserPayload;
+        } catch (error) {
+            console.error('JWT verification failed:', error);
+            // If verification fails, user remains null
+        }
+    }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-off-white p-8">
@@ -41,7 +37,7 @@ export default function DashboardPage() {
                 <p><strong className="font-semibold text-deep-space">Tenant:</strong> {user.tenantSlug}</p>
             </div>
         ) : (
-            <p className="mt-6 text-red-600">Could not load user information. You might not be logged in.</p>
+            <p className="mt-6 text-red-600">Could not load user information. You might not be logged in or your session is invalid.</p>
         )}
       </div>
     </main>
