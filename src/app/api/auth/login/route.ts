@@ -67,8 +67,13 @@ export async function POST(req: Request) {
       }
     );
 
-    // Set the token in a secure, httpOnly cookie
-    cookies().set('auth_token', token, {
+    // Create the response and set the cookie on it
+    const response = NextResponse.json(
+      { message: 'Login successful' },
+      { status: 200 }
+    );
+
+    response.cookies.set('auth_token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
@@ -76,7 +81,7 @@ export async function POST(req: Request) {
       maxAge: 60 * 60 * 24 * 7, // 7 days in seconds
     });
 
-    return NextResponse.json({ message: 'Login successful' }, { status: 200 });
+    return response;
 
   } catch (error) {
     console.error('Login Error:', error);
