@@ -13,7 +13,7 @@ interface UserPayload {
 // Making the component async to handle the cookie logic
 export default async function DashboardPage() {
     // Per the build error, we must treat cookies() as async and await it.
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const token = cookieStore.get('auth_token')?.value;
 
     let user: UserPayload | null = null;
