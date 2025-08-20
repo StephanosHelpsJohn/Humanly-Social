@@ -10,7 +10,9 @@ interface UserPayload {
   exp: number;
 }
 
-export default function DashboardPage() {
+// Making the component async to handle the cookie logic
+export default async function DashboardPage() {
+    // Per the build error, we must treat cookies() as async and await it.
     const cookieStore = cookies();
     const token = cookieStore.get('auth_token')?.value;
 
@@ -20,7 +22,6 @@ export default function DashboardPage() {
             user = jwt.verify(token, process.env.JWT_SECRET) as UserPayload;
         } catch (error) {
             console.error('JWT verification failed:', error);
-            // If verification fails, user remains null
         }
     }
 
