@@ -9,7 +9,7 @@ export default function Home() {
           has arrived.
         </h1>
         <p className="mt-6 max-w-xl text-lg md:text-xl text-deep-space/80">
-          Stop guessing. Start growing. Humanly Social is the ridiculously smart way to manage your brand's UGC, from creator discovery to content that converts.
+          Stop guessing. Start growing. Humanly Social is the ridiculously smart way to manage your brand&apos;s UGC, from creator discovery to content that converts.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
