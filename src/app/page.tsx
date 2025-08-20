@@ -13,7 +13,7 @@ export default function Home() {
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
-            href="#"
+            href="/login"
             className="rounded-full bg-juicy-orange px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-juicy-orange"
           >
             You in?
