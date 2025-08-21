@@ -53,7 +53,7 @@ export default function SignupPage() {
           <h1 className="font-recoleta text-4xl font-black text-deep-space">
             Create your account
           </h1>
-          <p className="mt-2 text-deep-space/70">
+          <p className="mt-2 text-deep-space/90">
             Let&apos;s get this party started.
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function SignupPage() {
             </button>
           </div>
         </form>
-        <p className="mt-6 text-center text-sm text-deep-space/60">
+        <p className="mt-6 text-center text-sm text-deep-space/80">
           Already have an account?{' '}
           <Link href="/login" className="font-semibold text-electric-violet hover:underline">
             Log in

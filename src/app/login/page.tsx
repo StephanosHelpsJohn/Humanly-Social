@@ -55,7 +55,7 @@ function LoginPageContent() {
           <h1 className="font-recoleta text-4xl font-black text-deep-space">
             Welcome back
           </h1>
-          <p className="mt-2 text-deep-space/70">
+          <p className="mt-2 text-deep-space/90">
             Let&apos;s get you signed in.
           </p>
         </div>
@@ -114,7 +114,7 @@ function LoginPageContent() {
             </button>
           </div>
         </form>
-        <p className="mt-6 text-center text-sm text-deep-space/60">
+        <p className="mt-6 text-center text-sm text-deep-space/80">
           Don&apos;t have an account?{' '}
           <Link href="/signup" className="font-semibold text-electric-violet hover:underline">
             Sign up
