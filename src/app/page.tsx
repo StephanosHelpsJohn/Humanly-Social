@@ -9,11 +9,11 @@ export default function Home() {
           has arrived.
         </h1>
         <p className="mt-6 max-w-xl text-lg md:text-xl text-deep-space/80">
-          Stop guessing. Start growing. Humanly Social is the ridiculously smart way to manage your brand's UGC, from creator discovery to content that converts.
+          Stop guessing. Start growing. Humanly Social is the ridiculously smart way to manage your brand&apos;s UGC, from creator discovery to content that converts.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
-            href="#"
+            href="/login"
             className="rounded-full bg-juicy-orange px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-juicy-orange"
           >
             You in?
